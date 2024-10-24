@@ -1,0 +1,350 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Josefin Sans", sans-serif;
+}
+:root{
+    /* Light Theme */
+--Very-Light-Gray: hsl(0, 0%, 98%);
+--Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+--Light-Grayish-Blue: hsl(233, 11%, 84%);
+--Dark-Grayish-Blue: hsl(236, 9%, 61%);
+--Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+
+/*Dark Theme */
+--Very-Dark-Blue: hsl(235, 21%, 11%);
+--Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+--Light-Grayish-Blue: hsl(234, 39%, 85%);
+--Light-Grayish-Blue : hsl(236, 33%, 92%); /*(hover)*/
+--Dark-Grayish-Blue: hsl(234, 11%, 52%);
+--Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
+--Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
+
+
+/*---*/
+--Bright-Blue: hsl(220, 98%, 61%);
+--Check-Background: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+}
+@media only screen and (min-width: 376px){
+    body {
+        background-color: var(--Very-Light-Gray);
+        background-image: url(./images/bg-desktop-light.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% 40%;
+        display: grid;
+        grid-template-columns: 30% 40% 30%;
+        height: 100vh;
+        transition: background-color .9s ease-in, background-image 0.8s ease-in ;
+    }
+    .container {
+        height: 100%;
+        grid-column: 2/3;
+        display: grid;
+        grid-template-rows: 20% 10% 57% 13%;    
+    }
+    
+    .container .toDo {
+        grid-row: 1/2;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: end;
+    }
+
+    .toDo p{
+        display: inline;
+        color: white;
+        font-weight: 700;
+        font-size: 40px;
+        margin-bottom: 42px;
+    }
+
+    .toDo #btnDark{
+        transform: scale(119%);
+        margin-bottom: 50px;
+        cursor: pointer;
+    }
+    .toDo #btnLight{
+        transform: scale(119%);
+        margin-bottom: 50px;
+        cursor: pointer;
+        display: none;
+    }
+    /**********************************************/
+    .container .typing {
+        grid-row: 2/3;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    #typingInput{
+        width: 100%;
+        height: 80%;
+        border-radius: 8px;
+        border-color: transparent;
+        caret-color: var(--Bright-Blue);
+        font-weight: 400;
+        font-size: 25px;
+        text-indent: 15%;
+        transition: background-color .9s ease-in;
+    }
+    #typingInput::placeholder{
+        color: var(--Dark-Grayish-Blue);
+        color: var(--placeholder-color); 
+    }
+
+
+
+    .typing .addTask{
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        border-radius: 50%;
+        left: 30px;
+        cursor: pointer;
+        border: 1.4px solid var(--Light-Grayish-Blue);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .addTaskImage{
+        width: 15px;
+        height: 15px;
+        display: none;
+    }
+
+
+    /***************************************************************/
+    .content{
+        grid-row: 3/4;
+        margin-top: 23px;
+        box-shadow: 0px -4px 3px 2px #00000024;
+        height: fit-content;
+    }
+
+    
+    /****************************************************************/
+    .endContent{
+        width: 100%;
+        height: 14%;
+        background-color: white;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        font-weight: 400;
+        text-indent: 5%;
+        line-height: 75px;
+        border-bottom: .8px solid var(--Light-Grayish-Blue);
+        box-shadow:0px 3px 14px 2px #0000001a;
+        color: var(--Dark-Grayish-Blue);
+        display: grid;
+        transition: background-color .9s ease-in;
+    }
+    
+    #itemss,#All,#Active,#Completed,#Clear{
+        display: inline;
+        cursor: pointer;
+    }
+    #itemss{
+        grid-column: 1/2;
+        margin-left: 18%;
+    }
+    #All{
+        color: var(--Bright-Blue);
+        grid-column: 2/3;
+        margin-left: 65%;
+    }
+    #Active{
+        grid-column: 3/4;
+        margin-left: 34%;
+    }
+    #Completed{
+        grid-column: 4/5;
+        margin-left: 4%;
+    }
+    #Clear{
+        grid-column: 5/6;
+        margin-left: 15%;
+    }
+    
+    #Clear:hover{
+        color: var(--Very-Dark-Grayish-Blue);
+    }
+    #Completed:hover{
+        color: var(--Very-Dark-Grayish-Blue);
+    }
+    #Active:hover{
+        color: var(--Very-Dark-Grayish-Blue);
+    }
+        
+    /****************************************************************/
+
+
+    ::selection{
+        background-color: hsl(280, 87%, 65%);
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    body {
+        background-color: var(--Very-Light-Gray);
+        background-image: url(./images/bg-mobile-light.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% 40%;
+        display: grid;
+        grid-template-columns: 5% 90% 5%;
+        height: 100vh;
+        transition: background-color .9s ease-in, background-image 0.8s ease-in ;
+    }
+    .container {
+        height: 100%;
+        grid-column: 2/3;
+        display: grid;
+        grid-template-rows: 20% 10% 57% 13%;    
+    }
+    
+    .container .toDo {
+        grid-row: 1/2;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: end;
+    }
+
+    .toDo p{
+        display: inline;
+        color: white;
+        font-weight: 700;
+        font-size: 30px;
+        margin-bottom: 42px;
+    }
+
+    .toDo #btnDark{
+        transform: scale(119%);
+        margin-bottom: 50px;
+        cursor: pointer;
+    }
+    .toDo #btnLight{
+        transform: scale(84%);
+        margin-bottom: 50px;
+        cursor: pointer;
+        display: none;
+    }
+    /**********************************************/
+    .container .typing {
+        grid-row: 2/3;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    #typingInput{
+        width: 100%;
+        height: 80%;
+        border-radius: 6px;
+        border-color: transparent;
+        caret-color: var(--Bright-Blue);
+        font-weight: 400;
+        font-size: 15px;
+        text-indent: 17%;
+        transition: background-color .9s ease-in;
+    }
+    #typingInput::placeholder{
+        color: var(--Dark-Grayish-Blue);
+        color: var(--placeholder-color); 
+    }
+
+
+
+    .typing .addTask{
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        border-radius: 50%;
+        left: 16px;
+        cursor: pointer;
+        border: 1.4px solid var(--Light-Grayish-Blue);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .addTaskImage{
+        width: 10px;
+        height: 10px;
+        display: none;
+    }
+
+
+    /***************************************************************/
+    .content{
+        grid-row: 3/4;
+        margin-top: 15px;
+        box-shadow: 0px -4px 3px 2px #00000024;
+        height: fit-content;
+    }
+
+    
+    /****************************************************************/
+    .endContent{
+        width: 100%;
+        height: 10%;
+        background-color: white;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        font-weight: 400;
+        text-indent: 6%;
+        line-height: 75px;
+        border-bottom: .8px solid var(--Light-Grayish-Blue);
+        box-shadow:0px 3px 14px 2px #0000001a;
+        color: var(--Dark-Grayish-Blue);
+        display: grid;
+        transition: background-color .9s ease-in;
+        font-size: 10px;
+    }
+    
+    #itemss,#All,#Active,#Completed,#Clear{
+        display: inline;
+        cursor: pointer;
+    }
+    #itemss{
+        grid-column: 1/2;
+        margin-left: 18%;
+    }
+    #All{
+        color: var(--Bright-Blue);
+        grid-column: 2/3;
+        margin-left: 48%;
+    }
+    #Active{
+        grid-column: 3/4;
+        margin-left: 34%;
+    }
+    #Completed{
+        grid-column: 4/5;
+        margin-left: 7%;
+    }
+    #Clear{
+        grid-column: 5/6;
+        margin-left: 9%;
+    }
+    
+    #Clear:hover{
+        color: var(--Very-Dark-Grayish-Blue);
+    }
+    #Completed:hover{
+        color: var(--Very-Dark-Grayish-Blue);
+    }
+    #Active:hover{
+        color: var(--Very-Dark-Grayish-Blue);
+    }
+        
+    /****************************************************************/
+
+
+    ::selection{
+        background-color: hsl(280, 87%, 65%);
+    }
+}
+

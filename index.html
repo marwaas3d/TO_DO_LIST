@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./main.css">
+  <title>Todo app</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="toDo">
+      <p>T  O  D  O</p>
+      <img src="./images/icon-moon.svg" alt="moon" id="btnDark">
+      <img src="./images/icon-sun.svg" alt="moon" id="btnLight">
+    </div>
+
+    <div class="typing">
+      <input type="text" id="typingInput" placeholder="Currently typing">
+      <div class="addTask" id="addTask">
+        <img src="./images/icon-check.svg" alt="" class="addTaskImage">
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="tasks"></div>
+
+
+
+      <div class="endContent">
+        <p id="itemss"><span class="items">--</span> items left</p>
+        <p id="All">All</p>
+        <p id="Active">Active</p>
+        <p id="Completed">Completed</p>
+        <p id="Clear">Clear Completed</p>
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+  <script src="./main.js"></script>
+</body>
+</html>
